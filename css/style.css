@@ -228,9 +228,6 @@ main {
 .banner-bottom__img-wrapper:not(:last-child) {
     margin-right: 31px;
 }
-.banner-bottom__img-wrapper:not(:last-child) {
-    margin-right: 31px;
-}
 .banner-bottom__img-wrapper::after {
     content: "";
     position: absolute;
@@ -263,6 +260,7 @@ main {
 .hero__content-text {
     display: flex;
     flex-direction: column;
+    margin-bottom: 32px;
 }
 .hero__content-heading {
     font-size: 44px;
@@ -307,6 +305,49 @@ main {
     font-weight: bold;
     text-decoration: line-through;
     color: #B6BCC8;
+}
+.hero__buttons {
+    display: flex;
+    align-items: center;
+}
+.hero__counter {
+    display: flex;
+    align-items: center;
+    background-color: #F6F8FD;
+    border-radius: 10px;
+    margin-right: 24px;
+}
+.button-counters {
+    border: 0;
+    background: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 23px 16px 17px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--orange);
+}
+.button-counters:hover {
+    color: #FFAB6A;
+}
+
+.counter {
+    padding: 23px 16px 17px 16px;
+    font-style: 20px;
+    font-weight: bold;
+    color: var(--dark);
+}
+.hero_content-button {
+    padding-top: 19px;
+    padding-bottom: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.trash-icon {
+    margin-right: 16px;
 }
 
 /* MODALS */
@@ -384,6 +425,40 @@ main {
     width: 550px;
     height: 550px;
 }
+.banner-bottom__lightbox-img-wrapper {
+    width: 88px;
+    height: 88px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+}
+.banner-bottom__lightbox-img-wrapper:not(:last-child) {
+    margin-right: 31px;
+}
+.banner-bottom__lightbox-img-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255,0.75);
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.banner-bottom__lightbox-img-wrapper:hover::after{
+    opacity: 1;
+    background-color: rgb(255, 255, 255,0.5);
+}
+.lightbox-thumnail-active {
+    border-color: var(--orange);
+}
+.lightbox-thumnail-active::after{
+    opacity: 1;
+}
+
 
 /* SHOPPING CART */
 .shopping-cart {
@@ -470,7 +545,9 @@ main {
     background-color: var(--orange);
     text-decoration: none;
     color: #fff;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
     font-size: 16px;
     font-weight: bold;
